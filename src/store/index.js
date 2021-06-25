@@ -6,8 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
       isLoggedIn: false,
-      access_token: 'BQAOayjoezhJPYoLC3m9YL2YNt6v6b7rfufcWldVnf45qTa423rxFM1SAn1g6avAzZ4uf9xGfUAUScGDehgU6jGCV5jFzhtLbwiTwYmsA1jqHwKm1OIRMmqQXywck3n9x_T7noXad6xlX38apS2nG9yjIji4s0Q',
-      access_token_albums: 'BQAIWsuiqKt9yBX7qaBTVtG_IaUvGGPYy3KORBcj4nGjoJzIIKBQV4KGD5kuZ4V8rlMiMQAPuxsQgmhzVOLo5v_fEnejUlH1fLKba3PWqM-bDhhkczk6biTc209p-WY7brRIt6_fobSYME80YFARYjrI-bQvQMs',
+      access_token: 'BQBd_LrMkNYzxOyqwVqA1hwwbQwjOpVuthyOL0sTPHXraOs6MDCcK_QmhELOIWCij9ifaNVNkQp7z2bj5OEwKGMaPLzBijgoJB_VLb6_NmqtsWsQtj55ogvtBTujbOPyTQMylbyBzVLJHA5Tz3VDaC-kt0PnfDE',
+      access_token_albums: 'BQCOJBkcG1aOn8tQSPQp08xWAzpXVwyZNu-RfIogFo_J3e3WGs6i5eTeVZBCpOY0HnQkyN-DEDy3PiSN6cNyfCoPVsY9gb7GSqKc6nenbtBT-M5tPnZw96SXWUmYhY-wy8djpVmncal04EST32TowArpobxt9Fc',
       searchResults: [],
       albumResults: []
   },

@@ -17,6 +17,11 @@
       components: {
           SearchCard
       },
+      mounted () {
+          this.sQuery = this.$route.query.q;
+          window.document.title = this.sQuery;
+          this.doSearch(this.sQuery)
+      },
       data () {
           return {
               title: 'Spotify',
@@ -32,6 +37,7 @@
               if (this.sQuery !== searchquery){
                   this.loading = true;
                   this.sQuery = searchquery;
+                  console.log(searchquery)
                   window.document.title = this.sQuery;
                   this.doSearch(this.sQuery)
               }
