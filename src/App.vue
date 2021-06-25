@@ -30,9 +30,9 @@
 export default {
   name: 'App',
   created () {
-//      if (!this.$store.getters.getIsLogged){
-//          this.$router.push({name: 'Login', params: { }})
-//      }
+      if (!this.$store.getters.getIsLogged){
+          this.$router.push({name: 'Login', params: { }})
+      }
   },
   data: () => ({
       searchQuery: '',
