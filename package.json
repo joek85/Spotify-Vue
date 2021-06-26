@@ -10,6 +10,10 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "latest",
+    "query-string": "latest",
+    "request": "latest",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.5.5",

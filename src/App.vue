@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="primary" dark app>
+    <v-app-bar v-if="isLogged" color="primary" dark app>
       <v-toolbar-title class="pr-12">
         <router-link to="/" custom v-slot="{ navigate }">
           <span @click="navigate" @keypress.enter="navigate" role="link" style="cursor: pointer">Spotify Vue</span>
@@ -29,8 +29,8 @@
 
 export default {
   name: 'App',
-  created () {
-      if (!this.$store.getters.getIsLogged){
+  mounted () {
+      if (!this.isLogged){
           this.$router.push({name: 'Login', params: { }})
       }
   },
@@ -47,6 +47,10 @@ export default {
           }
       },
   },
-  computed: {}
+  computed: {
+      isLogged () {
+          return this.$store.getters.getIsLogged
+      }
+  }
 };
 </script>

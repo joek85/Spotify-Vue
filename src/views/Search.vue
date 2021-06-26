@@ -19,8 +19,10 @@
       },
       mounted () {
           this.sQuery = this.$route.query.q;
-          window.document.title = this.sQuery;
-          this.doSearch(this.sQuery)
+          if (this.sQuery){
+              window.document.title = this.sQuery;
+              this.doSearch(this.sQuery)
+          }
       },
       data () {
           return {
@@ -34,10 +36,10 @@
       },
       watch: {
           '$route.query.q': function (searchquery) {
-              if (this.sQuery !== searchquery){
+              if (searchquery){
                   this.loading = true;
                   this.sQuery = searchquery;
-                  console.log(searchquery)
+                  console.log(searchquery);
                   window.document.title = this.sQuery;
                   this.doSearch(this.sQuery)
               }

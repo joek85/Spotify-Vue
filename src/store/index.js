@@ -6,8 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
       isLoggedIn: false,
-      access_token: 'BQBd_LrMkNYzxOyqwVqA1hwwbQwjOpVuthyOL0sTPHXraOs6MDCcK_QmhELOIWCij9ifaNVNkQp7z2bj5OEwKGMaPLzBijgoJB_VLb6_NmqtsWsQtj55ogvtBTujbOPyTQMylbyBzVLJHA5Tz3VDaC-kt0PnfDE',
-      access_token_albums: 'BQCOJBkcG1aOn8tQSPQp08xWAzpXVwyZNu-RfIogFo_J3e3WGs6i5eTeVZBCpOY0HnQkyN-DEDy3PiSN6cNyfCoPVsY9gb7GSqKc6nenbtBT-M5tPnZw96SXWUmYhY-wy8djpVmncal04EST32TowArpobxt9Fc',
+      access_token: '',
       searchResults: [],
       albumResults: []
   },
@@ -17,9 +16,21 @@ export default new Vuex.Store({
       },
       setAlbumResults (state, data) {
           state.albumResults = data
+      },
+      setAccessToken (state, data) {
+          state.access_token = data
+      },
+      setIsLogged (state, data) {
+          state.isLoggedIn = data
       }
   },
   actions: {
+      setIsLogged ({commit}, Logged) {
+        commit('setIsLogged', Logged)
+      },
+      setAccessToken ({commit}, AT) {
+          commit('setAccessToken', AT)
+      },
       Search ({commit, getters}, q){
           axios.get('https://api.spotify.com/v1/search', {
               headers: {
@@ -39,7 +50,7 @@ export default new Vuex.Store({
       FetchAlbums ({commit, getters}, id){
           axios.get('https://api.spotify.com/v1/artists/' + id + '/albums', {
               headers: {
-                  'Authorization': 'Bearer ' + getters.getAccessTokenAlbums
+                  'Authorization': 'Bearer ' + getters.getAccessToken
               },
           }).then((response) => {
               commit('setAlbumResults', response.data.items);
@@ -56,9 +67,6 @@ export default new Vuex.Store({
         },
         getAccessToken (state) {
             return state.access_token
-        },
-        getAccessTokenAlbums (state) {
-            return state.access_token_albums
         },
         getSearchResults (state) {
             return state.searchResults
