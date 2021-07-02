@@ -33,7 +33,7 @@
       },
       methods: {
         login () {
-            let params= '?client_id=b9d04c284f1b46b3ad4ddb15f0fe3766' +
+            let params= '?client_id=client' +
                 '&response_type=code' +
                 '&redirect_uri=http://localhost:3000/callback/' +
                 '&scope=user-read-email' +
