@@ -9,8 +9,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-const client_id = 'b9d04c284f1b46b3ad4ddb15f0fe3766';
-const client_secret = '9eb03bf17f5c4c9ca52b7da46463bacf';
+const client_id = 'id';
+const client_secret = 'client';
 const redirect_uri = 'http://localhost:3000/callback/';
 const server_address = 'http://localhost:8080/login/';
 
@@ -54,3 +54,4 @@ app.get('/callback' , function (req, res) {
 });
 
 app.listen(3000);
+
